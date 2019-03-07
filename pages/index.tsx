@@ -21,11 +21,13 @@ class Index extends React.PureComponent<{}, IIndexState> {
 
     handleChange = e => this.setState({ inputVal: e.currentTarget.value })
 
+    Img = () => <amp-img height="200" width="200" src="../static/255993.jpg" />
+
+    /* tslint: disable */
     render() {
-        const { inputVal } = this.state;
         return (
             <Layout>
-                <h1>My Blog</h1>
+                                <h1>My Blog</h1>
                 <ul>
                     <PostLink title="Hello Next.js" />
                     <PostLink title="Learning Next is awesome" />
@@ -52,8 +54,9 @@ class Index extends React.PureComponent<{}, IIndexState> {
                         }`
                       )}
                       items="data.hn.topStories"
-                      layout="fill"
-
+                      layout="responsive"
+                      height="800"
+                      width="800"
                 >
                     <Amp.Template type="amp-mustache" specName="default" >
                         <div>{"{{title}}"}</div>
