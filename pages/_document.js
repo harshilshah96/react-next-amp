@@ -75,13 +75,16 @@ export default class MyDocument extends Document {
     /* eslint-disable react/no-danger */
     return (
       <Amp.Html specName="html ⚡ for top-level html" lang="en">
-        <head>
+        <Head>
           {title}
           {headerBoilerplate(url)}
           {ampScriptTags}
           {ampStyleTag}
-        </head>
-        <body dangerouslySetInnerHTML={{ __html: html }} />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
       </Amp.Html>
     );
     /* eslint-enable */

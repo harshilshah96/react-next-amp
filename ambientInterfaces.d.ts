@@ -4,3 +4,6 @@ declare namespace JSX {
     }
 }
 
+declare interface Function {
+    resource?: string;
+}

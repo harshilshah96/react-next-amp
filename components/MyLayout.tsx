@@ -1,16 +1,22 @@
 import Header from "./Header";
-
-const layoutStyle:React.CSSProperties = {
+import { Provider } from "react-redux";
+import { store } from "../store";
+import * as React from 'react';
+const layoutStyle: React.CSSProperties = {
     margin: 20,
     padding: 20,
     border: '1px solid #DDD'
 }
-
-const Layout = (props) => (
-    <div style={layoutStyle}>
-        <Header />
-        {props.children}
-    </div>
-);
+const Layout = (Page) => class PageWrapper extends React.PureComponent {
+    render() {
+        return (
+            <Provider store={store}>
+                <div onClick={(event) => {console.log('>>123123',123123);}}>Demo123</div>
+                <Header />
+                <Page />
+            </Provider>
+        )
+    }
+};
 
 export default Layout;
