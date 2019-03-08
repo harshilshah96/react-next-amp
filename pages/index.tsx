@@ -34,7 +34,7 @@ class Index extends React.PureComponent<any, IIndexState> {
         return (
             <div>
                 <h1>My Blog</h1>
-                <button onMouseOver={(event)=>{console.log('>>',event.pageX);}}>Create User</button>
+                <button onClick={this.createModel}>Create User</button>
                 <ul>
                     <PostLink title="Hello Next.js" />
                     <PostLink title="Learning Next is awesome" />
