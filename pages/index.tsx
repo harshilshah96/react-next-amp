@@ -25,6 +25,10 @@ class Index extends React.PureComponent<any, IIndexState> {
         inputVal: 'Hello'
     }
 
+    componentDidMount() {
+
+    }
+
     handleChange = e => this.setState({ inputVal: e.currentTarget.value })
 
     Img = () => <amp-img height="200" width="200" src="../static/255993.jpg" />
@@ -36,7 +40,7 @@ class Index extends React.PureComponent<any, IIndexState> {
     render() {
         console.log('>>this.props', this.props);
         return (
-            <Layout>
+            <div>
                 <h1>My Blog</h1>
                 <button onClick={this.createModel}>Create User</button>
                 <ul>
@@ -45,50 +49,21 @@ class Index extends React.PureComponent<any, IIndexState> {
                     <PostLink title="Deploy apps with Zeit" />
                 </ul>
                 <Amp.AmpList
-                    className="stories-list"
                     specName="default"
-                    src={(
-                        `https://www.graphqlhub.com/graphql?query=${
-                        encodeURIComponent(`
-                            {
-                              hn {
-                                topStories {
-                                  id
-                                  title
-                                  score
-                                  descendants
-                                }
-                              }
-                            }
-                          `)
-                        }`
-                    )}
-                    items="data.hn.topStories"
-                    layout="responsive"
-                    height="800"
-                    width="800"
-                >
-                    <Amp.Template type="amp-mustache" specName="default" >
-                        <div>{"{{title}}"}</div>
+                    width="auto"
+                    height="100"
+                    layout="fixed-height"
+                    src="//www.json-generator.com/api/json/get/bUSavorYwO?indent=2">
+                    <Amp.Template
+                        type="amp-mustache"
+                        specName="default"
+                        >
+                        <div className="url-entry">
+                            <div>{`{{ title }}`}</div>
+                        </div>
                     </Amp.Template>
                 </Amp.AmpList>
-
-                <List
-                    className="stories-list"
-                    specName="default1"
-                    src={'https://www.graphqlhub.com/graphql?query={%20hn%20{%20topStories%20{%20id%20title%20score%20descendants%20}%20}%20}'}
-                    items="data.hn.topStories"
-                    layout="responsive"
-                    height="800"
-                    width="800"
-                >
-                    <Template type="amp-mustache" specName="default1">
-                        <Card
-                            src={'http://grizzlybk.com/wp-content/uploads/2015/06/Brown-Coconut-1.jpg'}
-                            title={"{{title}}"} />
-                    </Template>
-                </List>
-            </Layout>
+            </div>
         )
     }
 }
