@@ -39,8 +39,8 @@ export default class MyDocument extends Document {
                 } = {},
               } = {},
             ) => (
-              `${css}${__html}`
-            ),
+                `${css}${__html}`
+              ),
             '',
           ),
         }}

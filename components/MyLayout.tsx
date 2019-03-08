@@ -11,7 +11,7 @@ const Layout = (Page) => class PageWrapper extends React.PureComponent {
     render() {
         return (
             <Provider store={store}>
-                <div onClick={(event) => {console.log('>>123123',123123);}}>Demo123</div>
+                <div onClick={(event) => { console.log('>>123123', 123123); }}>Demo1234</div>
                 <Header />
                 <Page />
             </Provider>
