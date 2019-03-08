@@ -1,5 +1,5 @@
 import React from 'react';
-import Document from 'next/document';
+import Document, {Head, Main, NextScript} from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { AmpScripts, AmpScriptsManager, headerBoilerplate } from 'react-amphtml/setup';
 import * as Amp from 'react-amphtml';
